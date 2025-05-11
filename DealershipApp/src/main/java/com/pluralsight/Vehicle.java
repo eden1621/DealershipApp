@@ -20,7 +20,9 @@ public class Vehicle { private int vin;
         this.price = price;
     }
 
-    // Getters and setters (use IDE to generate or write manually)
+    // Getters and setters
+    // Getters and setters for each field go here
+// Get methods let us "read" these values when we need them
     public int getVin() { return vin; }
     public int getYear() { return year; }
     public String getMake() { return make; }
@@ -30,13 +32,8 @@ public class Vehicle { private int vin;
     public int getOdometer() { return odometer; }
     public double getPrice() { return price; }
 
-    public void setVin(int vin) { this.vin = vin; }
-    public void setYear(int year) { this.year = year; }
-    public void setMake(String make) { this.make = make; }
-    public void setModel(String model) { this.model = model; }
-    public void setType(String type) { this.type = type; }
-    public void setColor(String color) { this.color = color; }
-    public void setOdometer(int odometer) { this.odometer = odometer; }
-    public void setPrice(double price) { this.price = price; }
+    public String toString() {
+        return vin + " | " + year + " " + make + " " + model + " | " + type + " | " + color + " | " + odometer + " miles | $" + price;
+    }
 
 }

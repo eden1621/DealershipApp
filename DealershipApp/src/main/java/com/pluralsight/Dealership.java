@@ -15,31 +15,21 @@ public class Dealership {
         this.phone = phone;
         this.inventory = new ArrayList<>();
     }
-
     public void addVehicle(Vehicle vehicle) {
         inventory.add(vehicle);
     }
 
-    public void removeVehicle(Vehicle vehicle) {
-        inventory.remove(vehicle);
+    public ArrayList<Vehicle> getAllVehicles() {
+        return (ArrayList<Vehicle>) inventory;
     }
 
-    public List<Vehicle> getAllVehicles() {
-        return inventory;
+    public void removeVehicle(int vin) {
+        inventory.removeIf(vehicle -> vehicle.getVin() == vin);
     }
 
-    // Search methods - just return null for now, implement later
-    public List<Vehicle> getVehiclesByPrice(double min, double max) { return null; }
-    public List<Vehicle> getVehiclesByMakeModel(String make, String model) { return null; }
-    public List<Vehicle> getVehiclesByYear(int min, int max) { return null; }
-    public List<Vehicle> getVehiclesByColor(String color) { return null; }
-    public List<Vehicle> getVehiclesByMileage(int min, int max) { return null; }
-    public List<Vehicle> getVehiclesByType(String type) { return null; }
-
-    // Getters
+    // These help us save dealership info later
     public String getName() { return name; }
     public String getAddress() { return address; }
     public String getPhone() { return phone; }
-
         }
 
