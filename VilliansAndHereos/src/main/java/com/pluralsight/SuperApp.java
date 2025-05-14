@@ -1,4 +1,5 @@
 package com.pluralsight;
+import java.util.Random;
 
 public class SuperApp {
     public static void main(String[] args) {
@@ -31,5 +32,5 @@ public class SuperApp {
         }
 
     }
-}
+
 

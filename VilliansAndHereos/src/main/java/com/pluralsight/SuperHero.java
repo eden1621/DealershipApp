@@ -20,6 +20,16 @@ public class SuperHero extends SuperPerson{
 
     @Override
     public void fight(SuperPerson opponent){
+        random rand = new Random();
+        int base = rand.nextInt( 11);
+        int damage = base + experiencePoints;
+        if (base == 0) {
+            System.out.println(name + " fires a sneaky blast... but misses!");
+        }else {
+            System.out.println(name + " hits " + opponent.name + " with a sneaky blast for " + damage);
+            opponent.takeDamage(damage);
+
+        }
         //make the hero do a random amount of damage to the opponenet
         //the damage should be a random numnber plus the experiencesPoints(powerLevel)
         //if the base damage (without the xp) was 0, don't do any damage and just say you missed
@@ -28,21 +38,5 @@ public class SuperHero extends SuperPerson{
 
 
 }
-        public static void main(String[] args) {
-            String opponent = "Eden";
-            int experiencePoints = 5; // Power level
-            Random rand = new Random();
 
-            int baseDamage = rand.nextInt(6); // Random number from 0 to 5
-            int totalDamage;
-
-            if (baseDamage == 0) {
-                System.out.println("You swing and miss your attack on the " + opponent + "!");
-            } else {
-                totalDamage = baseDamage + experiencePoints;
-                System.out.println("You deal " + totalDamage + " damage to the " + opponent + "!");
-                System.out.println("You're kicking butt out there!");
-            }
-
-        }
 
